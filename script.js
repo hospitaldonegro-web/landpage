@@ -151,61 +151,65 @@ function carregarJornais(jornais) {
 
 // --- CARREGAMENTO GERAL (DADOS E JORNAIS) ---
 function loadElements() {
+  // 1. Carrega as informações gerais (contatos, redes sociais, etc.)
   fetch('data/dados.json')
     .then(response => {
       if (!response.ok) {
-        throw new Error('Erro ao carregar o arquivo JSON. Status: ' + response.status);
+        throw new Error('Erro ao carregar dados.json. Status: ' + response.status);
       }
       return response.json();
     })
     .then(dados => {
-      // Redes Sociais
       if (dados.instagram && document.getElementById('instagram')) document.getElementById('instagram').href = dados.instagram;
       if (dados.youtube && document.getElementById('youtube')) document.getElementById('youtube').href = dados.youtube;
       if (dados.facebook && document.getElementById('facebook')) document.getElementById('facebook').href = dados.facebook;
       if (dados.whatsapp && document.getElementById('whatsapp')) document.getElementById('whatsapp').href = dados.whatsapp;
 
-      // Telefone
       const linktel = document.getElementById('telefone');
       if (dados.telefone && linktel) {
         const apenasNumeros = dados.telefone.replace(/\D/g, "");
         linktel.href = `tel:+55${apenasNumeros}`;
         let telefoneFormatado = dados.telefone;
         if (apenasNumeros.length === 11) {
-          const ddd = apenasNumeros.substring(0, 2);
-          const parte1 = apenasNumeros.substring(2, 7);
-          const parte2 = apenasNumeros.substring(7, 11);
-          telefoneFormatado = `(${ddd}) ${parte1} - ${parte2}`;
+          telefoneFormatado = `(${apenasNumeros.substring(0, 2)}) ${apenasNumeros.substring(2, 7)} - ${apenasNumeros.substring(7, 11)}`;
         } else if (apenasNumeros.length === 10) {
-          const ddd = apenasNumeros.substring(0, 2);
-          const parte1 = apenasNumeros.substring(2, 6);
-          const parte2 = apenasNumeros.substring(6, 10);
-          telefoneFormatado = `(${ddd}) ${parte1} - ${parte2}`;
+          telefoneFormatado = `(${apenasNumeros.substring(0, 2)}) ${apenasNumeros.substring(2, 6)} - ${apenasNumeros.substring(6, 10)}`;
         }
         linktel.textContent = telefoneFormatado;
       }
 
-      // E-mail
       const linkmail = document.getElementById('email');
       if (dados.email && linkmail) {
         linkmail.href = `mailto:${dados.email}`;
         linkmail.textContent = dados.email;
       }
 
-      // Localização
       if (dados.localizacao && document.getElementById('localizacao')) {
         document.getElementById('localizacao').textContent = dados.localizacao;
       }
+    })
+    .catch(error => {
+      console.error('Erro no carregamento do dados.json:', error);
+    });
 
-      // Carrega os jornais dinamicamente
-      if (dados.jornais) {
-        carregarJornais(dados.jornais);
+  // 2. Carrega separadamente os jornais do arquivo jornais.json
+  fetch('data/jornais.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao carregar jornais.json. Status: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(jornais => {
+      if (jornais) {
+        carregarJornais(jornais);
       }
     })
     .catch(error => {
-      console.error('Erro no carregamento dos dados:', error);
+      console.error('Erro no carregamento dos jornais:', error);
     });
 }
+
 // --- RENDERIZAÇÃO DO PORTAL DE TRANSPARÊNCIA ---
 function carregarTransparencia() {
   const transparenciaGrid = document.getElementById('transparencia-grid');
