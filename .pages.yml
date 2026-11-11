@@ -1,3 +1,11 @@
+media:
+  - name: jornais
+    label: Arquivos dos jornais
+    input: jornais
+    output: /jornais
+    extensions:
+      - pdf
+
 content:
   - name: configuracoes
     label: Dados do instituto
@@ -32,3 +40,50 @@ content:
       - name: localizacao
         label: Localização
         type: string
+        
+  - name: jornais
+  label: Jornais publicados
+  type: file
+  path: data/jornais.json
+  format: json
+  list: true
+
+  fields:
+    - name: numero
+      label: Número da edição (Formato 01)
+      type: string
+      required: true
+
+    - name: edicaoFormatada
+      label: Edição formatada (Formato EDIÇÃO 01)
+      type: string
+      required: true
+
+    - name: mesAno
+      label: Mês e ano (Formato mês/ano)
+      type: string
+      required: true
+
+    - name: titulo
+      label: Título
+      type: string
+      required: true
+
+      - name: descricao
+      label: Descrição
+      type: string
+      required: true
+
+      - name: paginas
+      label: Quantidade de páginas (Formato 01 Páginas)
+      type: string
+      required: true
+
+      - name: pdf
+        label: Arquivo PDF
+        type: file
+        options:
+          media: jornais
+          extensions:
+            - pdf
+        required: true
