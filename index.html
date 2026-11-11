@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Site do Instituto Hospital do Negro.">
+  <title>Instituto Hospital do Negro</title>
+  <link rel="icon" href="img_sources/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- CABEÇALHO / NAVEGAÇÃO -->
+  <header class="site-header" id="cabecalho">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Hospital do Negro - início">
+        <img src="img_sources/hospital_icon.png" alt="Logo Hospital do Negro" class="brand-mark">
+        <span>Hospital do <strong>Negro</strong></span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#instituto">O instituto</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#jornais">Jornais</a>
+        <a href="#contato">Contato</a>
+        <a href="./transparencia.html">Transparência</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / INÍCIO -->
+    <section class="hero" id="inicio">
+      <div class="hero-image"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Solidariedade • Informação • Comunidade</p>
+        <h1>Cuidando de vidas.<br><em>Promovendo igualdade.</em></h1>
+        <p class="hero-copy">Trabalhamos para levar acolhimento, saúde e conscientização a quem mais precisa.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#instituto">Conheça nosso trabalho</a>
+          <a class="button button-light" href="#jornais">Ler nossos jornais <span>↗</span></a>
+        </div>
+      </div>
+      <div class="hero-note">Desde 2011, construindo solidariedade.</div>
+    </section>
+
+    <!-- SOBRE O INSTITUTO -->
+    <section class="intro section" id="instituto">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">Quem somos</p>
+          <h2>Uma iniciativa que começa com o essencial: <em>equidade.</em></h2>
+        </div>
+        <div class="intro-text">
+          <p>O Instituto Internacional de Saúde da América Latina - Hospital do Negro, é um espaço dedicado à promoção da saúde, educação médica e valorização da diversidade.</p>
+          <p>Promovemos saúde integral e equidade racial para combater desigualdades estruturais, aproximando as pessoas que mais precisam das que estão dispostas a ajudar.</p>
+          <a class="text-link" href="#contato">Fale com o instituto <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="section" id="atuacao">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Nossa atuação</p>
+            <h2>Pequenas ações, <em>impacto real.</em></h2>
+          </div>
+          <p>Nosso trabalho conecta assistência, informação e participação comunitária.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card card-featured">
+            <span class="card-number">01</span>
+            <div class="icon">☤</div>
+            <h3>Alimentação</h3>
+            <p>Arrecadação e distribuição de alimentos para famílias que precisam de apoio.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+
+          <article class="card">
+            <span class="card-number">02</span>
+            <div class="icon">
+              <svg class="card-icon-svg" viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-0-5H20"/>
+              </svg>
+            </div>
+            <h3>Conscientização</h3>
+            <p>Campanhas e ações educativas para estimular solidariedade e cidadania.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+
+          <article class="card">
+            <span class="card-number">03</span>
+            <div class="icon">
+              <svg class="card-icon-svg" viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Informação</h3>
+            <p>Um jornal periódico para registrar ações, histórias e assuntos da comunidade.</p>
+            <span class="card-arrow">↗</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICAÇÕES / JORNAIS -->
+    <section class="section newspapers" id="jornais">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Publicações</p>
+            <h2>Jornais do <em>Instituto.</em></h2>
+          </div>
+          <!-- Botão que abre o Modal de Todas as Edições -->
+          <button class="text-link" id="btn-todas-edicoes" style="background:none; border:none; cursor:pointer;">Ver todas as edições <span>→</span></button>
+        </div>
+
+        <!-- A última edição (Mais recente) será injetada aqui via JS -->
+        <div id="latest-paper-container"></div>
+
+        <!-- O arquivo com as últimas edições menores será injetado aqui via JS -->
+        <div class="archive" id="lista-jornais">
+          <div class="archive-title">
+            <p class="eyebrow">Arquivo</p>
+            <h3>Edições anteriores.</h3>
+          </div>
+          <div class="paper-grid" id="archive-paper-grid"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REDES SOCIAIS -->
+    <section class="social-section">
+      <div class="container social-grid">
+        <div>
+          <p class="eyebrow">Acompanhe</p>
+          <h2>O trabalho continua <em>fora daqui.</em></h2>
+        </div>
+        <div class="social-links">
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="Instagram" id="instagram">Instagram <span>↗</span></a>
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="YouTube" id="youtube">YouTube <span>↗</span></a>
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="Facebook" id="facebook">Facebook <span>↗</span></a>
+          <a href="" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" id="whatsapp">WhatsApp <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact section" id="contato">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contato</p>
+          <h2>Quer fazer parte dessa <em>rede?</em></h2>
+          <p class="contact-copy">Entre em contato para conhecer nosso trabalho, apoiar uma ação ou saber mais sobre o instituto.</p>
+        </div>
+        <div class="contact-details">
+          <a href="" target="_blank" rel="noopener noreferrer" id="email"><span>E-mail</span></a>
+          <a href="" target="_blank" rel="noopener noreferrer" id="telefone"><span>Telefone</span></a>
+          <div><span>Localização</span><p id="localizacao"></p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container footer-top">
+      <a class="brand footer-brand" href="#inicio">
+        <img src="img_sources/hospital_icon.png" alt="Logo Hospital do Negro" class="brand-mark">
+        <span>Hospital <strong>do Negro</strong></span>
+      </a>
+      <p>Solidariedade que se transforma em ação.</p>
+      <a class="back-top" href="#inicio">Voltar ao topo ↑</a>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2011 Instituto Hospital do Negro</span>
+      <span>CNPJ 13.786.729/0001-87</span>
+      <a href="https://gabrielmelo-git.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Site desenvolvido por Gabriel Melo</a>
+    </div>
+  </footer>
+
+  <!-- MODAL VISUALIZADOR DE PDF -->
+  <div class="modal" id="paper-modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-window" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">Visualizador</span>
+          <h2 id="modal-title">Jornal do Negro</h2>
+        </div>
+        <button class="close-modal" aria-label="Fechar">×</button>
+      </div>
+      
+      <div class="pdf-placeholder">
+        <iframe id="pdf-iframe" src="" width="100%" height="100%" style="border: none;"></iframe>
+      </div>
+
+      <div class="modal-footer">
+        <span>PDF • Jornal</span>
+        <button class="button button-primary close-modal">Fechar visualizador</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: LISTA DE TODAS AS EDIÇÕES -->
+  <div class="modal" id="all-papers-modal" aria-hidden="true">
+    <div class="modal-backdrop" id="close-all-modal-bg"></div>
+    <div class="modal-window" role="dialog" aria-modal="true" style="max-width: 960px;">
+      <div class="modal-header">
+        <div><span class="eyebrow">Acervo Completo</span><h2>Todas as Edições</h2></div>
+        <button class="close-modal" id="close-all-modal-btn" aria-label="Fechar">×</button>
+      </div>
+      
+      <div class="pdf-placeholder" style="overflow-y: auto; align-items: flex-start; padding: 25px;">
+        <!-- Grid dinâmico com todas as edições -->
+        <div id="modal-all-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%;"></div>
+      </div>
+
+      <div class="modal-footer">
+        <span>Acervo Digital • Instituto Hospital do Negro</span>
+        <button class="button button-primary" id="close-all-modal-footer">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>loadElements();</script>
+</body>
+</html>

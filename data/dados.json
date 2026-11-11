@@ -1,0 +1,20 @@
+{
+    "instagram": "https://www.instagram.com/hospital_do_negro01",
+    "youtube": "https://m.youtube.com/@HospitalDoNegro",
+    "facebook": "#",
+    "whatsapp": "https://wa.me/5545991366042",
+    "email": "hospitaldonegro@gmail.com",
+    "telefone": "4599136-6042",
+    "localizacao": "Foz do Iguaçu — Paraná",
+    "jornais": [
+    {
+      "numero": "01",
+      "edicaoFormatada": "EDIÇÃO 01",
+      "mesAno": "Setembro/2026",
+      "titulo": "Um mês de ações, encontros e histórias que merecem ser compartilhadas.",
+      "descricao": "Confira a edição mais recente do nosso jornal e acompanhe os projetos, resultados e acontecimentos do instituto.",
+      "paginas": "01 páginas",
+      "pdf": "../documentos/Edicao01.pdf"
+    }
+  ]
+}

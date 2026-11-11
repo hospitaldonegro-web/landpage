@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal da Transparência — Instituto Hospital do Negro</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img_sources/favicon.png" type="image/png">
+</head>
+<body>
+
+  <!-- CABEÇALHO / MENU -->
+  <header class="site-header">
+    <div class="container header-container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="brand">
+        <img src="img_sources/hospital_icon.png" alt="Logo Hospital do Negro" class="brand-mark">
+        <span>Instituto <strong>Hospital do Negro</strong></span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="transparencia.html" class="active">Transparência</a></li>
+          <li><a href="index.html#jornais">Jornais</a></li>
+        </ul>
+        <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SEÇÃO DE TRANSPARÊNCIA -->
+  <section class="section transparencia-section" style="padding-top: 120px;">
+    <div class="container">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Gestão Aberta</p>
+          <h2>Portal da <em>Transparência.</em></h2>
+        </div>
+        <p style="max-width: 400px; color: var(--muted); font-size: 14px;">
+          Consulte os relatórios de prestação de contas, balanços financeiros e documentos oficiais do instituto.
+        </p>
+      </div>
+
+      <!-- Onde o JavaScript vai injetar os cards de documentos -->
+      <div class="transparencia-grid" id="transparencia-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; margin-top: 30px;">
+        <!-- Injetado via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DE VISUALIZAÇÃO DE PDF (O mesmo padrão do index) -->
+  <div class="modal" id="paper-modal" aria-hidden="true">
+    <div class="modal-backdrop close-modal"></div>
+    <div class="modal-window" role="dialog" aria-modal="true">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">Documento Oficial</span>
+          <h2 id="modal-title">Visualizando PDF</h2>
+        </div>
+        <button class="close-modal" aria-label="Fechar">×</button>
+      </div>
+      <div class="pdf-placeholder">
+        <iframe id="pdf-iframe" src="" title="Visualizador de PDF"></iframe>
+      </div>
+      <div class="modal-footer">
+        <span>Portal da Transparência • Instituto</span>
+        <button class="button button-primary close-modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RODAPÉ -->
+  <footer>
+    <div class="container footer-top">
+      <a class="brand footer-brand" href="#inicio">
+        <img src="img_sources/hospital_icon.png" alt="Logo Hospital do Negro" class="brand-mark">
+        <span>Hospital <strong>do Negro</strong></span>
+      </a>
+      <p>Solidariedade que se transforma em ação.</p>
+    </div>
+    <div class="container footer-bottom">
+      <span>© 2011 Instituto Hospital do Negro</span>
+      <span>CNPJ 13.786.729/0001-87</span>
+      <span>Site desenvolvido por Gabriel Melo</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Executa a função específica para carregar a transparência ao abrir esta página
+    document.addEventListener("DOMContentLoaded", () => {
+      carregarTransparencia();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "documentos": [
+    {
+      "ano": "2026",
+      "categoria": "Prestação de Contas",
+      "titulo": "Relatório de Doações",
+      "dataPublicacao": "Outubro/2026",
+      "tamanho": "2.4 MB",
+      "pdf": "../documentos/contas-2026-q3.pdf"
+    },
+    {
+      "ano": "2026",
+      "categoria": "Balanço Patrimonial",
+      "titulo": "Balanço Financeiro Semestral",
+      "dataPublicacao": "Julho/2026",
+      "tamanho": "1.8 MB",
+      "pdf": "../documentos/balanco-2026-s1.pdf"
+    },
+    {
+      "ano": "2025",
+      "categoria": "Prestação de Contas",
+      "titulo": "Relatório",
+      "dataPublicacao": "Janeiro/2026",
+      "tamanho": "4.1 MB",
+      "pdf": "../documentos/contas-2025-anual.pdf"
+    }
+  ]
+}
