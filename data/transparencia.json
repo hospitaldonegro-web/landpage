@@ -14,7 +14,7 @@
       "titulo": "Balanço Financeiro Semestral",
       "dataPublicacao": "Julho/2026",
       "tamanho": "1.8 MB",
-      "pdf": "../documentos/balanco-2026-s1.pdf"
+      "pdf": "./documentos/balanco-2026-s1.pdf"
     },
     {
       "ano": "2025",
@@ -22,7 +22,7 @@
       "titulo": "Relatório",
       "dataPublicacao": "Janeiro/2026",
       "tamanho": "4.1 MB",
-      "pdf": "../documentos/contas-2025-anual.pdf"
+      "pdf": "./documentos/contas-2025-anual.pdf"
     }
   ]
 }
