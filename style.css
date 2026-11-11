@@ -858,6 +858,10 @@ footer {
   color: #0B3B17;
 }
 
+.transparencia-section p {
+  color: var(--dark_ink);
+}
+
 .transparencia-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
