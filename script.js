@@ -42,7 +42,7 @@ document.addEventListener("click", (e) => {
   const button = e.target.closest(".open-paper");
   if (button) {
     const titulo = button.dataset.paper || "Jornal do Negro";
-    const arquivoPdf = button.dataset.pdf || "./documentos/Edicao01.pdf";
+    const arquivoPdf = button.dataset.pdf || "documentos/Edicao01.pdf";
     closeAllModal();
     openModal(titulo, arquivoPdf);
   }
