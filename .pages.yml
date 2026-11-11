@@ -1,5 +1,6 @@
 
 media:
+  # ARQUIVOS DOS JORNAIS
   - name: jornais
     label: Arquivos dos jornais
     input: jornais
@@ -7,8 +8,16 @@ media:
     extensions:
       - pdf
 
+  # ARQUIVOS DE TRANSPARÊNCIA
+  - name: documentos
+    label: Documentos de transparência
+    input: documentos
+    output: /documentos
+    extensions:
+      - pdf
+
 content:
-  # DADOS DO INSTITUTO
+  # 1. DADOS DO INSTITUTO
   - name: configuracoes
     label: Dados do instituto
     type: file
@@ -29,7 +38,7 @@ content:
         type: string
 
       - name: whatsapp
-        label: Link do WhatsApp (https://wa.me/número)
+        label: Link do WhatsApp (Formato https://wa.me/número)
         type: string
 
       - name: email
@@ -37,14 +46,14 @@ content:
         type: string
 
       - name: telefone
-        label: Telefone (formato 4591111-1111)
+        label: Telefone (Formato 4591111-1111)
         type: string
 
       - name: localizacao
         label: Localização
         type: string
 
-  # JORNAIS PUBLICADOS
+  # 2. JORNAIS PUBLICADOS
   - name: jornais
     label: Jornais publicados
     type: file
@@ -59,7 +68,7 @@ content:
         required: true
 
       - name: edicaoFormatada
-        label: Edição formatada (Formato EDIÇÃO 01)
+        label: Edição formatada (Exemplo EDIÇÃO 01)
         type: string
         required: true
 
@@ -88,6 +97,49 @@ content:
         type: file
         options:
           media: jornais
+          extensions:
+            - pdf
+        required: true
+
+  # 3. DOCUMENTOS DE TRANSPARÊNCIA
+  - name: transparencia
+    label: Documentos de transparência
+    type: file
+    path: data/transparencia.json
+    format: json
+    list: true
+
+    fields:
+      - name: ano
+        label: Ano
+        type: string
+        required: true
+
+      - name: categoria
+        label: Categoria
+        type: string
+        required: true
+
+      - name: titulo
+        label: Título do documento
+        type: string
+        required: true
+
+      - name: dataPublicacao
+        label: Data de publicação (Formato mês/ano)
+        type: string
+        required: true
+
+      - name: tamanho
+        label: Tamanho do arquivo (Exemplo 2.4 MB)
+        type: string
+        required: true
+
+      - name: pdf
+        label: Arquivo PDF
+        type: file
+        options:
+          media: documentos
           extensions:
             - pdf
         required: true
