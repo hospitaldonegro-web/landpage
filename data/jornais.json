@@ -1,5 +1,4 @@
-{
-    "jornais": [
+[
     {
       "numero": "01",
       "edicaoFormatada": "EDIÇÃO 01",
@@ -9,5 +8,4 @@
       "paginas": "01 páginas",
       "pdf": "documentos/Edicao01.pdf"
     }
-  ]
-}
+]
