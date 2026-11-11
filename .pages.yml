@@ -1,3 +1,4 @@
+
 media:
   - name: jornais
     label: Arquivos dos jornais
@@ -7,10 +8,12 @@ media:
       - pdf
 
 content:
+  # DADOS DO INSTITUTO
   - name: configuracoes
     label: Dados do instituto
     type: file
     path: data/dados.json
+    format: json
 
     fields:
       - name: instagram
@@ -18,7 +21,7 @@ content:
         type: string
 
       - name: youtube
-        label: Link do Youtube
+        label: Link do YouTube
         type: string
 
       - name: facebook
@@ -26,11 +29,11 @@ content:
         type: string
 
       - name: whatsapp
-        label: Link do Whatsapp (https://wa.me/número)
+        label: Link do WhatsApp (https://wa.me/número)
         type: string
 
       - name: email
-        label: Email
+        label: E-mail
         type: string
 
       - name: telefone
@@ -40,44 +43,45 @@ content:
       - name: localizacao
         label: Localização
         type: string
-        
+
+  # JORNAIS PUBLICADOS
   - name: jornais
-  label: Jornais publicados
-  type: file
-  path: data/jornais.json
-  format: json
-  list: true
+    label: Jornais publicados
+    type: file
+    path: data/jornais.json
+    format: json
+    list: true
 
-  fields:
-    - name: numero
-      label: Número da edição (Formato 01)
-      type: string
-      required: true
+    fields:
+      - name: numero
+        label: Número da edição (Formato 01)
+        type: string
+        required: true
 
-    - name: edicaoFormatada
-      label: Edição formatada (Formato EDIÇÃO 01)
-      type: string
-      required: true
+      - name: edicaoFormatada
+        label: Edição formatada (Formato EDIÇÃO 01)
+        type: string
+        required: true
 
-    - name: mesAno
-      label: Mês e ano (Formato mês/ano)
-      type: string
-      required: true
+      - name: mesAno
+        label: Mês e ano (Formato mês/ano)
+        type: string
+        required: true
 
-    - name: titulo
-      label: Título
-      type: string
-      required: true
+      - name: titulo
+        label: Título
+        type: string
+        required: true
 
       - name: descricao
-      label: Descrição
-      type: string
-      required: true
+        label: Descrição
+        type: string
+        required: true
 
       - name: paginas
-      label: Quantidade de páginas (Formato 01 Páginas)
-      type: string
-      required: true
+        label: Quantidade de páginas (Formato 01 Páginas)
+        type: string
+        required: true
 
       - name: pdf
         label: Arquivo PDF
