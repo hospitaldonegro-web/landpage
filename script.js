@@ -149,6 +149,65 @@ function carregarJornais(jornais) {
   }
 }
 
+// --- CARREGAMENTO GERAL (DADOS E JORNAIS) ---
+function loadElements() {
+  // 1. Carrega dados gerais de contato/redes sociais
+  fetch('data/dados.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao carregar dados.json. Status: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(dados => {
+      if (dados.instagram && document.getElementById('instagram')) document.getElementById('instagram').href = dados.instagram;
+      if (dados.youtube && document.getElementById('youtube')) document.getElementById('youtube').href = dados.youtube;
+      if (dados.facebook && document.getElementById('facebook')) document.getElementById('facebook').href = dados.facebook;
+      if (dados.whatsapp && document.getElementById('whatsapp')) document.getElementById('whatsapp').href = dados.whatsapp;
+
+      const linktel = document.getElementById('telefone');
+      if (dados.telefone && linktel) {
+        const apenasNumeros = dados.telefone.replace(/\D/g, "");
+        linktel.href = `tel:+55${apenasNumeros}`;
+        let telefoneFormatado = dados.telefone;
+        if (apenasNumeros.length === 11) {
+          telefoneFormatado = `(${apenasNumeros.substring(0, 2)}) ${apenasNumeros.substring(2, 7)} - ${apenasNumeros.substring(7, 11)}`;
+        } else if (apenasNumeros.length === 10) {
+          telefoneFormatado = `(${apenasNumeros.substring(0, 2)}) ${apenasNumeros.substring(2, 6)} - ${apenasNumeros.substring(6, 10)}`;
+        }
+        linktel.textContent = telefoneFormatado;
+      }
+
+      const linkmail = document.getElementById('email');
+      if (dados.email && linkmail) {
+        linkmail.href = `mailto:${dados.email}`;
+        linkmail.textContent = dados.email;
+      }
+
+      if (dados.localizacao && document.getElementById('localizacao')) {
+        document.getElementById('localizacao').textContent = dados.localizacao;
+      }
+    })
+    .catch(error => {
+      console.error('Erro no carregamento dos dados gerais:', error);
+    });
+
+  // 2. Carrega os jornais do arquivo separado jornais.json
+  fetch('data/jornais.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Erro ao carregar jornais.json.');
+      }
+      return response.json();
+    })
+    .then(jornais => {
+      carregarJornais(jornais);
+    })
+    .catch(error => {
+      console.error('Erro no carregamento dos jornais:', error);
+    });
+}
+
 // --- RENDERIZAÇÃO DO PORTAL DE TRANSPARÊNCIA ---
 function carregarTransparencia() {
   const transparenciaGrid = document.getElementById('transparencia-grid');
@@ -164,7 +223,6 @@ function carregarTransparencia() {
     .then(documentos => {
       transparenciaGrid.innerHTML = "";
       
-      // Como o JSON agora é uma lista direta ([...]), validamos a própria lista
       if (!documentos || documentos.length === 0) {
         transparenciaGrid.innerHTML = "<p>Nenhum documento disponível no momento.</p>";
         return;
@@ -193,7 +251,4 @@ function carregarTransparencia() {
       console.error('Erro:', error);
       transparenciaGrid.innerHTML = "<p style='color: #ff6b6b;'>Erro ao carregar os documentos de transparência.</p>";
     });
-}
-
-
 }
