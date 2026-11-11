@@ -14,7 +14,7 @@
       "titulo": "Um mês de ações, encontros e histórias que merecem ser compartilhadas.",
       "descricao": "Confira a edição mais recente do nosso jornal e acompanhe os projetos, resultados e acontecimentos do instituto.",
       "paginas": "01 páginas",
-      "pdf": "./documentos/Edicao01.pdf"
+      "pdf": "documentos/Edicao01.pdf"
     }
   ]
 }
